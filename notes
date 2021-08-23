@@ -1,0 +1,22 @@
+to run tasks in scheduler, not multihreads
+
+use
+
+@EnableSchduling in main class
+and
+to set timing to run a task use
+@Scheduled(initialDelay=10000,fixedDelay=30000)
+
+
+@Scheduled is automatically picked by spring boot and run
+first time after 10sec and every 30 sec
+
+Proof
+----
+2021-08-22 18:54:08.508  INFO 82022 --- [           main] .e.s.SpringbootBasicSchedulerApplication : Started SpringbootBasicSchedulerApplication in 3.987 seconds (JVM running for 5.494)
+2021-08-22 18:54:18.499  INFO 82022 --- [   scheduling-1] c.e.s.items.ExpiredSchedular             : Welcome to my channel : Sun Aug 22 18:54:18 CDT 2021
+2021-08-22 18:54:48.508  INFO 82022 --- [   scheduling-1] c.e.s.items.ExpiredSchedular             : Welcome to my channel : Sun Aug 22 18:54:48 CDT 2021
+2021-08-22 18:55:18.512  INFO 82022 --- [   scheduling-1] c.e.s.items.ExpiredSchedular             : Welcome to my channel : Sun Aug 22 18:55:18 CDT 2021
+2021-08-22 18:55:48.516  INFO 82022 --- [   scheduling-1] c.e.s.items.ExpiredSchedular             : Welcome to my channel : Sun Aug 22 18:55:48 CDT 2021
+2021-08-22 18:56:18.521  INFO 82022 --- [   scheduling-1] c.e.s.items.ExpiredSchedular             : Welcome to my channel : Sun Aug 22 18:56:18 CDT 2021
+2021-08-22 18:56:48.524  INFO 82022 --- [   scheduling-1] c.e.s.items.ExpiredSchedular             : Welcome to my channel : Sun Aug 22 18:56:48 CDT 2021
